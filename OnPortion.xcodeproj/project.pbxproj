@@ -28,6 +28,7 @@
 		41702405270D6E5C00CE933B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41702407270D6E5C00CE933B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41702410270E197400CE933B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		41702412270FED1100CE933B /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 				417023F8270D6E5B00CE933B /* SceneDelegate.swift */,
 				417023FA270D6E5B00CE933B /* ViewController.swift */,
 				417023FC270D6E5B00CE933B /* Main.storyboard */,
+				41702412270FED1100CE933B /* PressStart2P.ttf */,
 				41702402270D6E5C00CE933B /* Assets.xcassets */,
 				41702404270D6E5C00CE933B /* LaunchScreen.storyboard */,
 				41702407270D6E5C00CE933B /* Info.plist */,

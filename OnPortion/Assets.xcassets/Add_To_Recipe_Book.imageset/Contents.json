@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Menu.png",
+      "filename" : "Add_To_Recipe_Book.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Menu-1.png",
+      "filename" : "Add_To_Recipe_Book-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Menu-2.png",
+      "filename" : "Add_To_Recipe_Book-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
