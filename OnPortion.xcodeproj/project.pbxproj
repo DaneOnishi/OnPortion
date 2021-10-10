@@ -17,6 +17,7 @@
 		41702411270E197400CE933B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41702410270E197400CE933B /* Model.swift */; };
 		417024142711E3AE00CE933B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024132711E3AE00CE933B /* SplashScreenViewController.swift */; };
 		417024182711FEAE00CE933B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024172711FEAE00CE933B /* HomeViewController.swift */; };
+		4170241A27133C3200CE933B /* SelectIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4170241927133C3200CE933B /* SelectIngredientViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		41702412270FED1100CE933B /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
 		417024132711E3AE00CE933B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		417024172711FEAE00CE933B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4170241927133C3200CE933B /* SelectIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				417024132711E3AE00CE933B /* SplashScreenViewController.swift */,
 				417024172711FEAE00CE933B /* HomeViewController.swift */,
+				4170241927133C3200CE933B /* SelectIngredientViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				41702401270D6E5B00CE933B /* OnPortion.xcdatamodeld in Sources */,
 				417024182711FEAE00CE933B /* HomeViewController.swift in Sources */,
 				417023F9270D6E5B00CE933B /* SceneDelegate.swift in Sources */,
+				4170241A27133C3200CE933B /* SelectIngredientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,10 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnPortionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="LKz-T5-6No">
-                                <rect key="frame" x="60" y="373" width="74" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="349" id="y2G-0d-SXd"/>
-                                </constraints>
+                                <rect key="frame" x="60" y="373" width="294" height="128"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -54,8 +51,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="180" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-5Z-MkD">
-                                <rect key="frame" x="20" y="77" width="524" height="40"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="235" translatesAutoresizingMaskIntoConstraints="NO" id="Qli-5Z-MkD">
+                                <rect key="frame" x="20" y="77" width="354" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnPortionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="ajb-3c-KQd">
                                         <rect key="frame" x="0.0" y="0.0" width="74" height="40"/>
@@ -63,11 +60,12 @@
                                             <constraint firstAttribute="height" constant="40" id="Pxs-oV-uUf"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="AeL-2q-acd">
-                                        <rect key="frame" x="254" y="0.0" width="45" height="40"/>
-                                    </imageView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-QJ-6KR">
-                                        <rect key="frame" x="479" y="0.0" width="45" height="40"/>
+                                        <rect key="frame" x="309" y="0.0" width="45" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="puo-2R-ysi"/>
+                                            <constraint firstAttribute="width" constant="45" id="sWS-Ni-SWt"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -92,6 +90,9 @@
                                     <constraint firstAttribute="height" constant="70" id="KUI-vR-3qg"/>
                                 </constraints>
                                 <state key="normal" image="Start_Button"/>
+                                <connections>
+                                    <action selector="startButtonOnPress:" destination="KLy-wR-XWJ" eventType="touchUpInside" id="NTi-Mm-cuY"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Ball" translatesAutoresizingMaskIntoConstraints="NO" id="Y0r-Um-1K9">
                                 <rect key="frame" x="92" y="449" width="254" height="254"/>
@@ -126,16 +127,17 @@
                     <connections>
                         <outlet property="backgroundGradient" destination="0Mh-zC-kAH" id="6Ek-cI-aZK"/>
                         <outlet property="ball" destination="Y0r-Um-1K9" id="P4s-21-UFJ"/>
+                        <outlet property="startButtonImage" destination="1Wd-OO-ctp" id="PCj-dF-dRi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YWs-qM-EHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="682.60869565217399" y="87.723214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--SelectIngredientViewController-->
         <scene sceneID="gJf-Vy-83d">
             <objects>
-                <viewController id="o22-zp-SxH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectIngredientViewController" title="SelectIngredientViewController" id="o22-zp-SxH" customClass="SelectIngredientViewController" customModule="OnPortion" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qdw-CS-e1a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,6 +151,9 @@
                                             <constraint firstAttribute="height" constant="70" id="Kor-MU-3Ki"/>
                                         </constraints>
                                         <state key="normal" image="Flour_Button"/>
+                                        <connections>
+                                            <action selector="flourButtonOnPress:" destination="o22-zp-SxH" eventType="touchUpInside" id="v6l-Fp-Pxk"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0p-12-W65">
                                         <rect key="frame" x="0.0" y="88" width="350" height="70"/>
@@ -156,6 +161,9 @@
                                             <constraint firstAttribute="height" constant="70" id="9GC-ty-eVD"/>
                                         </constraints>
                                         <state key="normal" image="Sugar_Button"/>
+                                        <connections>
+                                            <action selector="sugarButtonOnPress:" destination="o22-zp-SxH" eventType="touchUpInside" id="SSn-8q-y4z"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJ1-kf-XrZ">
                                         <rect key="frame" x="0.0" y="176" width="350" height="70"/>
@@ -163,6 +171,9 @@
                                             <constraint firstAttribute="height" constant="70" id="cM2-sK-cTt"/>
                                         </constraints>
                                         <state key="normal" image="Milk_Button"/>
+                                        <connections>
+                                            <action selector="milkButtonOnPress:" destination="o22-zp-SxH" eventType="touchUpInside" id="H1Q-9Z-OQG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bfq-4h-h05">
                                         <rect key="frame" x="0.0" y="264" width="350" height="70"/>
@@ -170,6 +181,9 @@
                                             <constraint firstAttribute="height" constant="70" id="rdA-ro-Li6"/>
                                         </constraints>
                                         <state key="normal" image="Cornstarch_Button"/>
+                                        <connections>
+                                            <action selector="cornstarchButtonOnPress:" destination="o22-zp-SxH" eventType="touchUpInside" id="VOI-gt-QN2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqC-u0-SVU">
                                         <rect key="frame" x="0.0" y="352" width="350" height="70"/>
@@ -177,6 +191,9 @@
                                             <constraint firstAttribute="height" constant="70" id="Vkc-Fc-XPf"/>
                                         </constraints>
                                         <state key="normal" image="Cocoa_Button"/>
+                                        <connections>
+                                            <action selector="cocoaButtonOnPress:" destination="o22-zp-SxH" eventType="touchUpInside" id="Q2n-pK-jpo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -198,6 +215,12 @@
                             <constraint firstItem="J1S-LA-HzM" firstAttribute="top" secondItem="gMb-KX-wyP" secondAttribute="top" constant="95" id="qyM-YG-bfF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cornastarchButton" destination="Bfq-4h-h05" id="oPP-ak-CSB"/>
+                        <outlet property="flourButton" destination="7lM-Eo-dBJ" id="oXW-0r-fgK"/>
+                        <outlet property="milkButton" destination="OJ1-kf-XrZ" id="uav-wZ-FgV"/>
+                        <outlet property="sugarButton" destination="u0p-12-W65" id="OuX-2a-YAV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1Y-Cp-IKC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -302,7 +325,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="spons sugar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-2U-PoR">
-                                <rect key="frame" x="150" y="172" width="209" height="28"/>
+                                <rect key="frame" x="254" y="172" width="105" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="1da-Ge-tz4"/>
                                 </constraints>
@@ -311,7 +334,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYQ-SK-ecb">
-                                <rect key="frame" x="25" y="172" width="114" height="28"/>
+                                <rect key="frame" x="25" y="172" width="65.5" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="MVN-ck-3um"/>
                                 </constraints>
