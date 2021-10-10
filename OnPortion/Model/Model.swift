@@ -21,7 +21,6 @@ class ModelSingleton {
     let oneSoupSpoonSugar = 6
     let oneTeaSpoonSugar = 2.5
     
-    
 
     func measureFlour() {
     

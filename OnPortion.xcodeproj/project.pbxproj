@@ -15,6 +15,8 @@
 		41702403270D6E5C00CE933B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41702402270D6E5C00CE933B /* Assets.xcassets */; };
 		41702406270D6E5C00CE933B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41702404270D6E5C00CE933B /* LaunchScreen.storyboard */; };
 		41702411270E197400CE933B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41702410270E197400CE933B /* Model.swift */; };
+		417024142711E3AE00CE933B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024132711E3AE00CE933B /* SplashScreenViewController.swift */; };
+		417024182711FEAE00CE933B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024172711FEAE00CE933B /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		41702407270D6E5C00CE933B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41702410270E197400CE933B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		41702412270FED1100CE933B /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
+		417024132711E3AE00CE933B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		417024172711FEAE00CE933B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 		4170240F270D707700CE933B /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				417024132711E3AE00CE933B /* SplashScreenViewController.swift */,
+				417024172711FEAE00CE933B /* HomeViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -171,8 +177,10 @@
 			files = (
 				41702411270E197400CE933B /* Model.swift in Sources */,
 				417023FB270D6E5B00CE933B /* ViewController.swift in Sources */,
+				417024142711E3AE00CE933B /* SplashScreenViewController.swift in Sources */,
 				417023F7270D6E5B00CE933B /* AppDelegate.swift in Sources */,
 				41702401270D6E5B00CE933B /* OnPortion.xcdatamodeld in Sources */,
+				417024182711FEAE00CE933B /* HomeViewController.swift in Sources */,
 				417023F9270D6E5B00CE933B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
