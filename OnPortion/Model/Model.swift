@@ -14,7 +14,9 @@ class ModelSingleton {
     
     let patternMeasurementUnity = 1
     let waterDensity = 1
+    var sum: Double = 0.0
     
+
     let recipients: [Recipient] = [
         Recipient(name: "Cup", volum: 1),
         Recipient(name: "Glass", volum: 1),
