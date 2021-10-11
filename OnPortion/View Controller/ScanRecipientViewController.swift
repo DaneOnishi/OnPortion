@@ -10,6 +10,7 @@ import AVFoundation
 
 class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
     @IBOutlet weak var topBackgroundView: UIVisualEffectView!
+    @IBOutlet weak var bottomBackgroundView: UIVisualEffectView!
     let blurEffect = UIBlurEffect(style: .light)
     
     @IBOutlet weak var objectIdentifierView: UIView!
@@ -29,6 +30,8 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
         super.viewDidLoad()
         
         topBackgroundView.effect = blurEffect
+        bottomBackgroundView.effect = blurEffect
+        
         self.addCameraInput()
         self.addPreviewLayer()
         self.addVideoOutput()

@@ -31,6 +31,7 @@
 		417024332714076900CE933B /* RecipeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024322714076900CE933B /* RecipeBookViewController.swift */; };
 		417024352714CDDD00CE933B /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024342714CDDC00CE933B /* ImagePredictor.swift */; };
 		417024372714D4F200CE933B /* CMSampleBuffer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024362714D4F100CE933B /* CMSampleBuffer+.swift */; };
+		4170243B2714D94200CE933B /* OnPortion 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4170243A2714D94200CE933B /* OnPortion 3.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		417024322714076900CE933B /* RecipeBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookViewController.swift; sourceTree = "<group>"; };
 		417024342714CDDC00CE933B /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
 		417024362714D4F100CE933B /* CMSampleBuffer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer+.swift"; sourceTree = "<group>"; };
+		4170243A2714D94200CE933B /* OnPortion 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "OnPortion 3.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				417024232714011700CE933B /* OnPortion 1.mlmodel */,
+				4170243A2714D94200CE933B /* OnPortion 3.mlmodel */,
 				417023F6270D6E5B00CE933B /* AppDelegate.swift */,
 				417023F8270D6E5B00CE933B /* SceneDelegate.swift */,
 				417023FA270D6E5B00CE933B /* ViewController.swift */,
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4170243B2714D94200CE933B /* OnPortion 3.mlmodel in Sources */,
 				41702411270E197400CE933B /* Model.swift in Sources */,
 				417023FB270D6E5B00CE933B /* ViewController.swift in Sources */,
 				417024292714020600CE933B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
