@@ -18,6 +18,12 @@
 		417024142711E3AE00CE933B /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024132711E3AE00CE933B /* SplashScreenViewController.swift */; };
 		417024182711FEAE00CE933B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024172711FEAE00CE933B /* HomeViewController.swift */; };
 		4170241A27133C3200CE933B /* SelectIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4170241927133C3200CE933B /* SelectIngredientViewController.swift */; };
+		4170241C2713942400CE933B /* Recipients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4170241B2713942400CE933B /* Recipients.swift */; };
+		4170241E271395D100CE933B /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4170241D271395D100CE933B /* Ingredient.swift */; };
+		4170242027139F3800CE933B /* ScanRecipientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4170241F27139F3800CE933B /* ScanRecipientViewController.swift */; };
+		417024242714011700CE933B /* OnPortion 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 417024232714011700CE933B /* OnPortion 1.mlmodel */; };
+		417024282714020600CE933B /* VNClassificationObservation+confidenceString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024262714020600CE933B /* VNClassificationObservation+confidenceString.swift */; };
+		417024292714020600CE933B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024272714020600CE933B /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +41,12 @@
 		417024132711E3AE00CE933B /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		417024172711FEAE00CE933B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4170241927133C3200CE933B /* SelectIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientViewController.swift; sourceTree = "<group>"; };
+		4170241B2713942400CE933B /* Recipients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipients.swift; sourceTree = "<group>"; };
+		4170241D271395D100CE933B /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		4170241F27139F3800CE933B /* ScanRecipientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRecipientViewController.swift; sourceTree = "<group>"; };
+		417024232714011700CE933B /* OnPortion 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "OnPortion 1.mlmodel"; sourceTree = "<group>"; };
+		417024262714020600CE933B /* VNClassificationObservation+confidenceString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VNClassificationObservation+confidenceString.swift"; sourceTree = "<group>"; };
+		417024272714020600CE933B /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				417023F5270D6E5B00CE933B /* OnPortion */,
+				417024252714020600CE933B /* Extensions */,
 				417023F4270D6E5B00CE933B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +80,7 @@
 		417023F5270D6E5B00CE933B /* OnPortion */ = {
 			isa = PBXGroup;
 			children = (
+				417024232714011700CE933B /* OnPortion 1.mlmodel */,
 				417023F6270D6E5B00CE933B /* AppDelegate.swift */,
 				417023F8270D6E5B00CE933B /* SceneDelegate.swift */,
 				417023FA270D6E5B00CE933B /* ViewController.swift */,
@@ -87,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				41702410270E197400CE933B /* Model.swift */,
+				4170241B2713942400CE933B /* Recipients.swift */,
+				4170241D271395D100CE933B /* Ingredient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -104,8 +120,18 @@
 				417024132711E3AE00CE933B /* SplashScreenViewController.swift */,
 				417024172711FEAE00CE933B /* HomeViewController.swift */,
 				4170241927133C3200CE933B /* SelectIngredientViewController.swift */,
+				4170241F27139F3800CE933B /* ScanRecipientViewController.swift */,
 			);
 			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		417024252714020600CE933B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				417024262714020600CE933B /* VNClassificationObservation+confidenceString.swift */,
+				417024272714020600CE933B /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,12 +206,18 @@
 			files = (
 				41702411270E197400CE933B /* Model.swift in Sources */,
 				417023FB270D6E5B00CE933B /* ViewController.swift in Sources */,
+				417024292714020600CE933B /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
+				4170241E271395D100CE933B /* Ingredient.swift in Sources */,
+				417024282714020600CE933B /* VNClassificationObservation+confidenceString.swift in Sources */,
 				417024142711E3AE00CE933B /* SplashScreenViewController.swift in Sources */,
+				4170241C2713942400CE933B /* Recipients.swift in Sources */,
 				417023F7270D6E5B00CE933B /* AppDelegate.swift in Sources */,
 				41702401270D6E5B00CE933B /* OnPortion.xcdatamodeld in Sources */,
 				417024182711FEAE00CE933B /* HomeViewController.swift in Sources */,
+				417024242714011700CE933B /* OnPortion 1.mlmodel in Sources */,
 				417023F9270D6E5B00CE933B /* SceneDelegate.swift in Sources */,
 				4170241A27133C3200CE933B /* SelectIngredientViewController.swift in Sources */,
+				4170242027139F3800CE933B /* ScanRecipientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
