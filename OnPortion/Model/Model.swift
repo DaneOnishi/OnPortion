@@ -15,15 +15,28 @@ class ModelSingleton {
     let patternMeasurementUnity = 1
     let waterDensity = 1
     var sum: Double = 0.0
+    var recipientMultiplier: Int = 0
     
-
+    
+    private let nameTranslationMatrix: [String: String] = [
+        "CopoMEJ": "Party Cup",
+        "XicaraVidro": "Glass",
+        "XicaraPadroes": "Cup",
+        "ConchaSopa": "SoupShell",
+        "Cumbuca": "Bowl",
+        "ColherSopa": "Spoon",
+        "ColherMini": "Mini Spoon"
+        
+    ]
+    
     let recipients: [Recipient] = [
         Recipient(name: "Cup", volum: 1),
         Recipient(name: "Glass", volum: 1),
         Recipient(name: "Party Cup", volum: 1),
         Recipient(name: "Spoon", volum: 1),
         Recipient(name: "Mini Spoon", volum: 1),
-        Recipient(name: "Bowl", volum: 1)
+        Recipient(name: "Bowl", volum: 1),
+        Recipient(name: "SoupShell", volum: 1)
     ]
     
     let ingredients: [Ingredient] = [
@@ -42,6 +55,13 @@ class ModelSingleton {
     func translate(from recipient: Recipient, toOther otherRecipient: Recipient) -> Double {
         // Returns how much times otherRecipient fills recipient
         return 0.0
+    }
+    
+    func getRecipient(for name: String) -> Recipient? {
+        let recipientName = nameTranslationMatrix[name]
+        return recipients.first { recipient in
+            recipient.name == recipientName
+        }
     }
     
 //    let glassFlour = 200

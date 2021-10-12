@@ -20,5 +20,10 @@ class ResultViewController: UIViewController {
     
     @IBAction func addToRecipeBookButton(_ sender: Any) {
         buttonAnimation(name: addToRecipeBookButton )
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let recipeVC = storyboard.instantiateViewController(identifier: "RecipeBookViewController") as? RecipeBookViewController else { return }
+        recipeVC.modalPresentationStyle = .fullScreen
+        self.present(recipeVC, animated: true, completion: nil)
     }
 }

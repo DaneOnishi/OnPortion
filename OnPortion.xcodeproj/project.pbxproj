@@ -32,6 +32,7 @@
 		417024352714CDDD00CE933B /* ImagePredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024342714CDDC00CE933B /* ImagePredictor.swift */; };
 		417024372714D4F200CE933B /* CMSampleBuffer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024362714D4F100CE933B /* CMSampleBuffer+.swift */; };
 		4170243B2714D94200CE933B /* OnPortion 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4170243A2714D94200CE933B /* OnPortion 3.mlmodel */; };
+		4170243C2714FE6800CE933B /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41702412270FED1100CE933B /* PressStart2P.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,13 +137,13 @@
 			isa = PBXGroup;
 			children = (
 				417024132711E3AE00CE933B /* SplashScreenViewController.swift */,
-				417024302714075800CE933B /* ResultViewController.swift */,
 				417024172711FEAE00CE933B /* HomeViewController.swift */,
 				4170241927133C3200CE933B /* SelectIngredientViewController.swift */,
-				4170241F27139F3800CE933B /* ScanRecipientViewController.swift */,
 				4170242A271406B700CE933B /* ConversionFromViewController.swift */,
 				4170242C271406CE00CE933B /* ConversionToViewController.swift */,
+				4170241F27139F3800CE933B /* ScanRecipientViewController.swift */,
 				4170242E2714072200CE933B /* TypeValueViewController.swift */,
+				417024302714075800CE933B /* ResultViewController.swift */,
 				417024322714076900CE933B /* RecipeBookViewController.swift */,
 			);
 			path = "View Controller";
@@ -216,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41702406270D6E5C00CE933B /* LaunchScreen.storyboard in Resources */,
+				4170243C2714FE6800CE933B /* PressStart2P.ttf in Resources */,
 				41702403270D6E5C00CE933B /* Assets.xcassets in Resources */,
 				417023FE270D6E5B00CE933B /* Main.storyboard in Resources */,
 			);

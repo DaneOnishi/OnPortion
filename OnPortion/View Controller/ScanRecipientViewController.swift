@@ -12,9 +12,14 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
     @IBOutlet weak var topBackgroundView: UIVisualEffectView!
     @IBOutlet weak var bottomBackgroundView: UIVisualEffectView!
     let blurEffect = UIBlurEffect(style: .light)
+    var isRecipient = false
     
     @IBOutlet weak var objectIdentifierView: UIView!
+    @IBOutlet weak var objectNameLabel: UILabel!
+    
     let imagePredictor = ImagePredictor()
+    var recipientInput = ""
+    var recipientMultiplier = ModelSingleton.shared.recipientMultiplier
     
     private let captureSession = AVCaptureSession()
     
@@ -38,6 +43,28 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
         self.captureSession.startRunning()
         
     }
+    @IBAction func checkButtonOnPress(_ sender: Any) {
+       //  includeRecipientOnAccount()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let resultVC = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
+        resultVC.modalPresentationStyle = .fullScreen
+        self.present(resultVC, animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func crossButtonOnPress(_ sender: Any) {
+    }
+    
+//    func includeRecipientOnAccount() {
+//        switch recipientInput {
+//        case "Cup":
+//            recipientMultiplier = 250
+//       // case "Glass":
+//            
+//        default:
+//            <#code#>
+//        }
+//    }
     
     private func addCameraInput() {
         let device = AVCaptureDevice.default(for: .video)!
@@ -73,11 +100,33 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
         
         if counter % checkInterval == 0 {
             try? imagePredictor.makePredictions(for: uiImage) { predictions in
-                print(predictions)
+                guard let maxConfidencePrediction = predictions?.max(by: { p1, p2 in
+                    Double(p1.confidencePercentage) ?? 0 < Double(p2.confidencePercentage) ?? 0
+                }) else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    if let confidence = Double(maxConfidencePrediction.confidencePercentage),
+                       confidence > 0.9,
+                       let recipient = ModelSingleton.shared.getRecipient(for: maxConfidencePrediction.classification) {
+                        self.objectNameLabel.text = "Is this \(recipient.name)?"
+                        self.recipientInput = recipient.name
+                        
+                        // TODO: Atualizar uma variavel do self chamada currentRecipient
+                    } else {
+                        self.objectNameLabel.text = "Searching..."
+                        
+                        // TODO: Setar current recipient pra nulo
+                    }
+                }
             }
         }
         counter += 1
         
+        
     }
+    
+    // envia currentRecipient pra alguem faze calculos
     
 }
