@@ -23,32 +23,54 @@ class ConversionToViewController: UIViewController {
         buttonAnimation(name: toRecipientButton)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let typeValueVC = storyboard.instantiateViewController(identifier: "TypeValueViewController") as? TypeValueViewController else { return }
-        typeValueVC.modalPresentationStyle = .fullScreen
-        self.present(typeValueVC, animated: true, completion: nil)
+        guard let scanVC = storyboard.instantiateViewController(identifier: "ScanRecipientViewController") as? ScanRecipientViewController else { return }
+        scanVC.defininingCalculatorRole = .target
+        scanVC.modalPresentationStyle = .fullScreen
+        self.present(scanVC, animated: true, completion: nil)
     }
     
     @IBAction func toGramsButtonOnPress(_ sender: Any) {
-        buttonAnimation(name: toGramsButton)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let typeValueVC = storyboard.instantiateViewController(identifier: "TypeValueViewController") as? TypeValueViewController else { return }
-        typeValueVC.modalPresentationStyle = .fullScreen
-        self.present(typeValueVC, animated: true, completion: nil)
+        
+        guard let grams = ModelSingleton.shared.measurementUnits.first(where: {$0.name == "Grams"}) else {
+            fatalError("Could not find recipient")
+        }
+        
+        ModelSingleton.shared.currentCalculator.add(measurement: grams, as: .target)
+      
+        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.toGramsButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentTypeValueView()
+            }
+        }
     }
     
     @IBAction func toPoundsButtonOnPress(_ sender: Any) {
         buttonAnimation(name: toPoundsButton)
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let typeValueVC = storyboard.instantiateViewController(identifier: "TypeValueViewController") as? TypeValueViewController else { return }
-        typeValueVC.modalPresentationStyle = .fullScreen
-        self.present(typeValueVC, animated: true, completion: nil)
+        presentTypeValueView()
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.toPoundsButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentTypeValueView()
+            }
+        }
     }
     
     @IBAction func toMillilitersButtonOnPress(_ sender: Any) {
-        buttonAnimation(name: toMillilitersButton)
-        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.toMillilitersButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentTypeValueView()
+            }
+        }
+    }
+    
+    func presentTypeValueView() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let typeValueVC = storyboard.instantiateViewController(identifier: "TypeValueViewController") as? TypeValueViewController else { return }
         typeValueVC.modalPresentationStyle = .fullScreen

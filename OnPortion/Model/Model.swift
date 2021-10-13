@@ -11,12 +11,11 @@ class ModelSingleton {
     static let shared = ModelSingleton()
     private init() {}
     
+    var currentCalculator = ConversionCalculator()
     
-    let patternMeasurementUnity = 1
-    let waterDensity = 1
-    var sum: Double = 0.0
-    var recipientMultiplier: Int = 0
-    
+    func resetCalculator() {
+        currentCalculator = ConversionCalculator()
+    }
     
     private let nameTranslationMatrix: [String: String] = [
         "CopoMEJ": "Party Cup",
@@ -31,31 +30,26 @@ class ModelSingleton {
     
     let recipients: [Recipient] = [
         Recipient(name: "Cup", volum: 1),
-        Recipient(name: "Glass", volum: 1),
-        Recipient(name: "Party Cup", volum: 1),
-        Recipient(name: "Spoon", volum: 1),
-        Recipient(name: "Mini Spoon", volum: 1),
-        Recipient(name: "Bowl", volum: 1),
-        Recipient(name: "SoupShell", volum: 1)
+        Recipient(name: "Glass", volum: 2),
+        Recipient(name: "Party Cup", volum: 3),
+        Recipient(name: "Spoon", volum: 0.5),
+        Recipient(name: "Mini Spoon", volum: 0.3),
+        Recipient(name: "Bowl", volum: 5),
+        Recipient(name: "SoupShell", volum: 0.8)
     ]
     
     let ingredients: [Ingredient] = [
-        Ingredient(name: "Flour", density: 2, multipliesPatternMeasurementUnityBy: 1),
-        Ingredient(name: "Sugar", density: 1, multipliesPatternMeasurementUnityBy: 1),
-        Ingredient(name: "Cocoa", density: 0.5, multipliesPatternMeasurementUnityBy: 1),
-        Ingredient(name: "Cornstarch", density: 0.3, multipliesPatternMeasurementUnityBy: 1),
-        Ingredient(name: "Milk", density: 0.1, multipliesPatternMeasurementUnityBy: 1)
+        Ingredient(name: "Flour", density: 2),
+        Ingredient(name: "Sugar", density: 1),
+        Ingredient(name: "Cocoa", density: 0.5),
+        Ingredient(name: "Cornstarch", density: 0.3),
+        Ingredient(name: "Milk", density: 0.1)
     ]
     
-    func calculateMaxUnits(for ingredient: Ingredient, in recipient: Recipient) -> Double {
-        // Calculates how much of ingrediente can be put inside recipient
-        return 0.2
-    }
-    
-    func translate(from recipient: Recipient, toOther otherRecipient: Recipient) -> Double {
-        // Returns how much times otherRecipient fills recipient
-        return 0.0
-    }
+    let measurementUnits: [MeasurementUnit] = [
+        MeasurementUnit(name: "Grams", ratioToGrams: 1),
+        MeasurementUnit(name: "Pounds", ratioToGrams: 453.592)
+    ]
     
     func getRecipient(for name: String) -> Recipient? {
         let recipientName = nameTranslationMatrix[name]

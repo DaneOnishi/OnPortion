@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ModelSingleton.shared.resetCalculator()
     }
     @IBAction func startButtonOnPress(_ sender: Any) {
         UIView.animate(withDuration: 0.2) {
@@ -39,10 +40,10 @@ class HomeViewController: UIViewController {
     }
         
         override func viewDidAppear(_ animated: Bool) {
-            UIView.animate(withDuration: 3, delay: 0, options: [.autoreverse, .repeat]) {
+            UIView.animate(withDuration: 1, delay: 0, options: [.autoreverse, .repeat]) {
                 self.ball.frame = CGRect(x: self.ball.frame.origin.x, y: self.ball.frame.origin.y + 20, width: self.ball.frame.size.width, height: self.ball.frame.size.height
                 )} completion: { _ in
-                    UIView.animate(withDuration: 3, delay: 0, options: [.autoreverse, .repeat]) {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.autoreverse, .repeat]) {
                         self.ball.frame = CGRect(x: self.ball.frame.origin.x, y: self.ball.frame.origin.y - 20, width: self.ball.frame.size.width, height: self.ball.frame.size.height
                         )}
                 }

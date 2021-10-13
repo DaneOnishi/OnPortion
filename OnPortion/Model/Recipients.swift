@@ -9,7 +9,7 @@ import Foundation
 
 class Recipient {
     var name: String
-    var volum: Double
+    var volum: Double // cm cubico
     
     internal init(name: String, volum: Double) {
         self.name = name

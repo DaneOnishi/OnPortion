@@ -9,12 +9,25 @@ import UIKit
 
 class ResultViewController: UIViewController {
     @IBOutlet weak var resultLabel: UILabel!
-    var result = "\(ModelSingleton.shared.sum)"
-        
     @IBOutlet weak var addToRecipeBookButton: UIButton!
+    
+    let calculator = ModelSingleton.shared.currentCalculator
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultLabel.text = result
+        
+        if let value = calculator.calculate(operation: .recipientToRecipient),
+           let sourceRecipient = calculator.items.first(where: { $0.role == .source && $0.type == .recipient })?.object as? Recipient,
+           let targetRecipient = calculator.items.first(where: { $0.role == .target && $0.type == .recipient })?.object as? Recipient {
+            resultLabel.text = "Conversion from \(sourceRecipient.name) to \(targetRecipient.name) is \(value)"
+           
+        } else if let value = calculator.calculate(operation: .measureToMeasure) {
+            
+        } else if let value = calculator.calculate(operation: .recipientToMeasure) {
+            
+        } else if let value = calculator.calculate(operation: .measureToRecipient) {
+            
+        }
      
     }
     

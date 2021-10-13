@@ -33,6 +33,9 @@
 		417024372714D4F200CE933B /* CMSampleBuffer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 417024362714D4F100CE933B /* CMSampleBuffer+.swift */; };
 		4170243B2714D94200CE933B /* OnPortion 3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4170243A2714D94200CE933B /* OnPortion 3.mlmodel */; };
 		4170243C2714FE6800CE933B /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41702412270FED1100CE933B /* PressStart2P.ttf */; };
+		41E9D4672715455F00EFEA2A /* ConversionCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D4662715455F00EFEA2A /* ConversionCalculator.swift */; };
+		41E9D469271548DE00EFEA2A /* MeasurementUnity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D468271548DE00EFEA2A /* MeasurementUnity.swift */; };
+		41E9D46D271687B600EFEA2A /* OnPortion 8.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 41E9D46C271687B600EFEA2A /* OnPortion 8.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		417024342714CDDC00CE933B /* ImagePredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePredictor.swift; sourceTree = "<group>"; };
 		417024362714D4F100CE933B /* CMSampleBuffer+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMSampleBuffer+.swift"; sourceTree = "<group>"; };
 		4170243A2714D94200CE933B /* OnPortion 3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "OnPortion 3.mlmodel"; sourceTree = "<group>"; };
+		41E9D4662715455F00EFEA2A /* ConversionCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionCalculator.swift; sourceTree = "<group>"; };
+		41E9D468271548DE00EFEA2A /* MeasurementUnity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementUnity.swift; sourceTree = "<group>"; };
+		41E9D46C271687B600EFEA2A /* OnPortion 8.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "OnPortion 8.mlmodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 			children = (
 				417024232714011700CE933B /* OnPortion 1.mlmodel */,
 				4170243A2714D94200CE933B /* OnPortion 3.mlmodel */,
+				41E9D46C271687B600EFEA2A /* OnPortion 8.mlmodel */,
 				417023F6270D6E5B00CE933B /* AppDelegate.swift */,
 				417023F8270D6E5B00CE933B /* SceneDelegate.swift */,
 				417023FA270D6E5B00CE933B /* ViewController.swift */,
@@ -122,6 +129,8 @@
 				4170241B2713942400CE933B /* Recipients.swift */,
 				4170241D271395D100CE933B /* Ingredient.swift */,
 				417024342714CDDC00CE933B /* ImagePredictor.swift */,
+				41E9D4662715455F00EFEA2A /* ConversionCalculator.swift */,
+				41E9D468271548DE00EFEA2A /* MeasurementUnity.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,13 +250,16 @@
 				417024332714076900CE933B /* RecipeBookViewController.swift in Sources */,
 				4170241C2713942400CE933B /* Recipients.swift in Sources */,
 				417023F7270D6E5B00CE933B /* AppDelegate.swift in Sources */,
+				41E9D46D271687B600EFEA2A /* OnPortion 8.mlmodel in Sources */,
 				4170242F2714072200CE933B /* TypeValueViewController.swift in Sources */,
 				41702401270D6E5B00CE933B /* OnPortion.xcdatamodeld in Sources */,
 				417024182711FEAE00CE933B /* HomeViewController.swift in Sources */,
 				417024242714011700CE933B /* OnPortion 1.mlmodel in Sources */,
 				417024352714CDDD00CE933B /* ImagePredictor.swift in Sources */,
+				41E9D469271548DE00EFEA2A /* MeasurementUnity.swift in Sources */,
 				417023F9270D6E5B00CE933B /* SceneDelegate.swift in Sources */,
 				4170242B271406B700CE933B /* ConversionFromViewController.swift in Sources */,
+				41E9D4672715455F00EFEA2A /* ConversionCalculator.swift in Sources */,
 				4170241A27133C3200CE933B /* SelectIngredientViewController.swift in Sources */,
 				4170242027139F3800CE933B /* ScanRecipientViewController.swift in Sources */,
 				417024372714D4F200CE933B /* CMSampleBuffer+.swift in Sources */,

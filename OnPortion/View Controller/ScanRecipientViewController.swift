@@ -9,17 +9,16 @@ import UIKit
 import AVFoundation
 
 class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
+    var defininingCalculatorRole: ConversionCalculatorItemRole = .source
+    
     @IBOutlet weak var topBackgroundView: UIVisualEffectView!
     @IBOutlet weak var bottomBackgroundView: UIVisualEffectView!
     let blurEffect = UIBlurEffect(style: .light)
-    var isRecipient = false
     
     @IBOutlet weak var objectIdentifierView: UIView!
     @IBOutlet weak var objectNameLabel: UILabel!
     
     let imagePredictor = ImagePredictor()
-    var recipientInput = ""
-    var recipientMultiplier = ModelSingleton.shared.recipientMultiplier
     
     private let captureSession = AVCaptureSession()
     
@@ -30,6 +29,8 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
     }()
     
     private let videoOutput = AVCaptureVideoDataOutput()
+    
+    var currentRecipient: Recipient?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,28 +44,34 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
         self.captureSession.startRunning()
         
     }
+    
     @IBAction func checkButtonOnPress(_ sender: Any) {
-       //  includeRecipientOnAccount()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let resultVC = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
-        resultVC.modalPresentationStyle = .fullScreen
-        self.present(resultVC, animated: true, completion: nil)
+        // garanta que o recipiente existe ou seja o modelo encontrou recipiente ou retorne faz novo
+        guard let recipient = currentRecipient else {
+            return
+        }
+        
+        // adiciona na calculadora atual
+        ModelSingleton.shared.currentCalculator.add(recipient: recipient, as: defininingCalculatorRole)
+        
+        if defininingCalculatorRole == .source {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let resultVC = storyboard.instantiateViewController(identifier: "ConversionToViewController") as? ConversionToViewController else { return }
+            resultVC.modalPresentationStyle = .fullScreen
+            self.present(resultVC, animated: true, completion: nil)
+        } else if defininingCalculatorRole == .target {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let resultVC = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
+            resultVC.modalPresentationStyle = .fullScreen
+            self.present(resultVC, animated: true, completion: nil)
+        }
+        
         
     }
     
     @IBAction func crossButtonOnPress(_ sender: Any) {
     }
     
-//    func includeRecipientOnAccount() {
-//        switch recipientInput {
-//        case "Cup":
-//            recipientMultiplier = 250
-//       // case "Glass":
-//            
-//        default:
-//            <#code#>
-//        }
-//    }
     
     private func addCameraInput() {
         let device = AVCaptureDevice.default(for: .video)!
@@ -111,22 +118,16 @@ class ScanRecipientViewController: UIViewController, AVCaptureVideoDataOutputSam
                        confidence > 0.9,
                        let recipient = ModelSingleton.shared.getRecipient(for: maxConfidencePrediction.classification) {
                         self.objectNameLabel.text = "Is this \(recipient.name)?"
-                        self.recipientInput = recipient.name
+                        self.currentRecipient = recipient
                         
                         // TODO: Atualizar uma variavel do self chamada currentRecipient
                     } else {
                         self.objectNameLabel.text = "Searching..."
-                        
-                        // TODO: Setar current recipient pra nulo
+                        self.currentRecipient = nil
                     }
                 }
             }
         }
         counter += 1
-        
-        
     }
-    
-    // envia currentRecipient pra alguem faze calculos
-    
 }

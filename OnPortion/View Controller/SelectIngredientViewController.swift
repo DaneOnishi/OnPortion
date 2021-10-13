@@ -24,43 +24,90 @@ class SelectIngredientViewController: UIViewController {
     @IBAction func flourButtonOnPress(_ sender: Any) {
         buttonAnimation(name: flourButton)
         
+        guard let ingredient = ModelSingleton.shared.ingredients.first(where: {$0.name == "Flour"}) else {
+            fatalError("Could not find ingredient named Flour")
+        }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let conversionFromVC = storyboard.instantiateViewController(identifier: "ConversionFromViewController") as? ConversionFromViewController else { return }
-        conversionFromVC.modalPresentationStyle = .fullScreen
-        self.present(conversionFromVC, animated: true, completion: nil)
+        ModelSingleton.shared.currentCalculator.add(ingredient: ingredient, as: .source)
+        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.flourButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentConversionFrom()
+            }
+        }
     }
     
     @IBAction func sugarButtonOnPress(_ sender: Any) {
-        buttonAnimation(name: sugarButton)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let conversionFromVC = storyboard.instantiateViewController(identifier: "ConversionFromViewController") as? ConversionFromViewController else { return }
-        conversionFromVC.modalPresentationStyle = .fullScreen
-        self.present(conversionFromVC, animated: true, completion: nil)
+        guard let ingredient = ModelSingleton.shared.ingredients.first(where: {$0.name == "Sugar"}) else {
+            fatalError("Could not find ingredient named Sugar")
+        }
+        
+        ModelSingleton.shared.currentCalculator.add(ingredient: ingredient, as: .source)
+        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.sugarButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentConversionFrom()
+            }
+        }
     }
     
     @IBAction func milkButtonOnPress(_ sender: Any) {
-        buttonAnimation(name: milkButton)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let conversionFromVC = storyboard.instantiateViewController(identifier: "ConversionFromViewController") as? ConversionFromViewController else { return }
-        conversionFromVC.modalPresentationStyle = .fullScreen
-        self.present(conversionFromVC, animated: true, completion: nil)
+        guard let ingredient = ModelSingleton.shared.ingredients.first(where: {$0.name == "Milk"}) else {
+            fatalError("Could not find ingredient named Milk")
+        }
+        
+        ModelSingleton.shared.currentCalculator.add(ingredient: ingredient, as: .source)
+        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.milkButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentConversionFrom()
+            }
+        }
     }
     
     @IBAction func cornstarchButtonOnPress(_ sender: Any) {
-        buttonAnimation(name: cornastarchButton)
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let conversionFromVC = storyboard.instantiateViewController(identifier: "ConversionFromViewController") as? ConversionFromViewController else { return }
-        conversionFromVC.modalPresentationStyle = .fullScreen
-        self.present(conversionFromVC, animated: true, completion: nil)
+        
+        guard let ingredient = ModelSingleton.shared.ingredients.first(where: {$0.name == "CornStarch"}) else {
+            fatalError("Could not find ingredient named Cornstarch")
+        }
+        
+        ModelSingleton.shared.currentCalculator.add(ingredient: ingredient, as: .source)
+        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.cornastarchButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentConversionFrom()
+            }
+        }
     }
     
     @IBAction func cocoaButtonOnPress(_ sender: Any) {
-        buttonAnimation(name: cocoaButton)
+        guard let ingredient = ModelSingleton.shared.ingredients.first(where: {$0.name == "Cocoa"}) else {
+            fatalError("Could not find ingredient named Cocoa")
+        }
         
+        ModelSingleton.shared.currentCalculator.add(ingredient: ingredient, as: .source)
+        
+        UIView.animate(withDuration: 0.3) {
+            buttonAnimation(name: self.cocoaButton)
+        } completion: { _ in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.presentConversionFrom()
+            }
+        }
+    }
+    
+    func presentConversionFrom() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let conversionFromVC = storyboard.instantiateViewController(identifier: "ConversionFromViewController") as? ConversionFromViewController else { return }
         conversionFromVC.modalPresentationStyle = .fullScreen

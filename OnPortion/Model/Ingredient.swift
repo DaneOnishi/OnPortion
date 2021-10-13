@@ -9,12 +9,10 @@ import Foundation
 
 class Ingredient {
     var name: String
-    var density: Double
-    var multipliesPatternMeasurementUnityBy: Double
+    var densityPerGram: Double // cm3 por grama
     
-    internal init(name: String, density: Double, multipliesPatternMeasurementUnityBy: Double) {
+    internal init(name: String, density: Double) {
         self.name = name
-        self.density = density
-        self.multipliesPatternMeasurementUnityBy = multipliesPatternMeasurementUnityBy
+        self.densityPerGram = density
     }
 }
