@@ -20,15 +20,24 @@ class ResultViewController: UIViewController {
            let sourceRecipient = calculator.items.first(where: { $0.role == .source && $0.type == .recipient })?.object as? Recipient,
            let targetRecipient = calculator.items.first(where: { $0.role == .target && $0.type == .recipient })?.object as? Recipient {
             resultLabel.text = "Conversion from \(sourceRecipient.name) to \(targetRecipient.name) is \(value)"
-           
-        } else if let value = calculator.calculate(operation: .measureToMeasure) {
             
-        } else if let value = calculator.calculate(operation: .recipientToMeasure) {
+        } else if let value = calculator.calculate(operation: .measureToMeasure),
+                  let sourceMeasurement = calculator.items.first(where: { $0.role == .source && $0.type == .measurementUnit })?.object as? MeasurementUnit,
+                  let targetMeasurement = calculator.items.first(where: { $0.role == .target && $0.type == .measurementUnit })?.object as? MeasurementUnit {
+            resultLabel.text = "Conversion from \(sourceMeasurement.name) to \(targetMeasurement.name) is \(value)"
             
-        } else if let value = calculator.calculate(operation: .measureToRecipient) {
+        } else if let value = calculator.calculate(operation: .recipientToMeasure),
+                  let sourceRecipient = calculator.items.first(where: { $0.role == .source && $0.type == .recipient })?.object as? Recipient,
+                  let targetMeasurement = calculator.items.first(where: { $0.role == .target && $0.type == .measurementUnit })?.object as? MeasurementUnit {
+            resultLabel.text = "Conversion from \(sourceRecipient.name) to \(targetMeasurement.name) is \(value)"
+            
+        } else if let value = calculator.calculate(operation: .measureToRecipient),
+                  let sourceMeasurement = calculator.items.first(where: { $0.role == .source && $0.type == .measurementUnit })?.object as? MeasurementUnit,
+                  let targetRecipient = calculator.items.first(where: { $0.role == .target && $0.type == .recipient })?.object as? Recipient {
+            resultLabel.text = "Conversion from \(sourceMeasurement.name) to \(targetRecipient.name) is \(value)"
             
         }
-     
+        
     }
     
     @IBAction func addToRecipeBookButton(_ sender: Any) {
