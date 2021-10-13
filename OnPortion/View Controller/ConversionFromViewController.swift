@@ -46,7 +46,7 @@ class ConversionFromViewController: UIViewController {
             buttonAnimation(name: self.gramsButton)
         } completion: { _ in
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.presentConversionToViewController()
+                self.presentTypeValueView()
             }
         }
     }
@@ -83,4 +83,13 @@ class ConversionFromViewController: UIViewController {
         conversionToVC.modalPresentationStyle = .fullScreen
         self.present(conversionToVC, animated: true, completion: nil)
     }
+    
+    func presentTypeValueView() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let typeValueVC = storyboard.instantiateViewController(identifier: "TypeValueViewController") as? TypeValueViewController else { return }
+        typeValueVC.modalPresentationStyle = .fullScreen
+        self.present(typeValueVC, animated: true, completion: nil)
+    }
+    
 }
+

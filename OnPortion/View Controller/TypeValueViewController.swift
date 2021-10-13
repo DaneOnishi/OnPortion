@@ -20,7 +20,7 @@ class TypeValueViewController: UIViewController {
         buttonAnimation(name: continueButton)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let resultVC = storyboard.instantiateViewController(identifier: "ResultViewController") as? ResultViewController else { return }
+        guard let resultVC = storyboard.instantiateViewController(identifier: "ConversionToViewController") as? ConversionToViewController else { return }
         resultVC.modalPresentationStyle = .fullScreen
         self.present(resultVC, animated: true, completion: nil)
     }
